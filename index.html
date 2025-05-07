@@ -22,9 +22,14 @@
     <link rel="stylesheet" href="assets/app/css/fontawesome-pro.css">
     <link rel="stylesheet" href="assets/app/css/spacing.css">
     <link rel="stylesheet" href="assets/app/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <style>
+    
+   
     #section-hero {
     height: 100vh; /* Full viewport height */
     overflow: hidden; /* Prevent overflow */
@@ -84,7 +89,7 @@ h2, .h6 {
 }
 
 .de_nav li.active h3 {
-    color: #00ff00; /* Active tab color */
+    color: #D9FF00; /* Active tab color */
 }
 
 .event-card {
@@ -122,6 +127,259 @@ h2, .h6 {
     .ms-footer2-top-inner {
         padding: 10px; /* Adjust padding for mobile */
     }
+}
+/* Header area: reduce height and padding */
+.header__area {
+  min-height: 50px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent;
+}
+.header__main {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  height: 60px; /* or adjust as needed for your logo */
+  align-items: center;
+}
+.header__logo {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Logo: reduce size and align left */
+.header__logo img {
+  max-height: 60px;
+  height: auto;
+}
+
+/* Center the menu */
+.main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+
+/* Menu items: uppercase, spaced, green dot separator */
+.main-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* space between items */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu ul li {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0px;
+  margin: 0 6px; /* was 12px, now less */
+  font-size: 14px; /* optional: make the dot a bit smaller */
+    
+  
+}
+
+.main-menu ul li:not(:last-child)::after {
+  content: "•";
+  color: #EAFF00; /* neon green */
+  margin: 0 12px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/* Menu links */
+.main-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.main-menu ul li a:hover {
+  color: #D9FF00;
+}
+
+/* Hamburger menu: always visible on right */
+.header__hamburger {
+  display: flex !important;
+  align-items: center;
+  margin-left: auto;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #D9FF00;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+/* Hide extra header buttons for minimal look */
+.header__btn, .user__acount {
+  display: none !important;
+}
+
+.header__area .header__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  /* No margin auto! */
+}
+
+.header__right {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* This centers the menu in the available space */
+}
+
+.header__area .header__logo {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__area .header__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optionally, center the menu as well */
+.main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Don't force 100% width */
+}
+
+.bd-theme-settings {
+  display: none !important;
+}
+
+
+
+
+.whatsapp-float {
+    position: fixed;
+  bottom: 20px; /* Keep this to position from the bottom */
+  left: 25px;   /* Change from right to left */
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+  display: none; /* Initially hidden */
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
+.mil-footer-menu {
+    margin-bottom: 120px;
+}
+.mil-footer-menu ul li {
+    list-style-type: none;
+    margin-bottom: 30px;
+}
+.mil-footer-menu ul li a {
+    display: block;
+    font-weight: 500;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.9);
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+.mil-footer-menu ul li a:hover {
+    transform: translateX(10px);
+    color: rgb(217, 255, 0);
+}
+@media screen and (max-width: 768px) {
+    .mil-footer-menu ul li a {
+        font-size: 22px;
+    }
+}
+.mil-subscribe-form {
+    position: relative;
+    height: 70px;
+    width: 100%;
+}
+.mil-subscribe-form input {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 70px;
+    padding: 0 0 0 50px;
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+.mil-subscribe-form .mil-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    .footer-spacing {
+    margin-top: 50px; /* Adjust the value as needed */
+}
+
+
+}
+
+.mil-social-icons li {
+    display: inline-block;
+    margin-right: 15px; /* Adjust spacing between icons */
+}
+
+.mil-social-icons i {
+    font-size: 24px; /* Adjust icon size */
+    color: #D9FF00; /* Change color as needed */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.mil-social-icons a:hover i {
+    color: #fff; /* Change color on hover */
+}
+
+
+.mil-menu-list li a {
+    transition: color 0.3s ease;
+}
+
+.mil-menu-list li a:hover {
+    color: #D9FF00 !important;
 }
 </style>
 <body>
@@ -287,6 +545,10 @@ h2, .h6 {
                                                     <a href="#ms-popular__area2"> Why Us</a>
                                                 </li>
                                                 <li>
+                                                    <a href="#gal"> Gallery</a>
+                                                </li>
+
+                                                <li>
                                                     <a href="#eventz"> Events</a>
                                                 </li>
                                                 <li>
@@ -297,26 +559,10 @@ h2, .h6 {
                                                 </li>
                                             </ul>
                                         </nav>
-                                        <!-- for wp -->
-                                        <div class="header__hamburger ml-50 d-none">
-                                            <button type="button" class="hamburger-btn offcanvas-open-btn">
-                                                <span>01</span>
-                                                <span>01</span>
-                                                <span>01</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                                       
 
                               
-                                    <div class="header__btn">
-                                        <a href="join.html" class="ms-border-btn"><i class="fa-regular fa-plus"></i>List Your Service</a>
-                                    </div>
-                                    <div class="user__acount d-none d-xxl-inline-flex">
-                                        <span>
-                                            <a href="login.html"><i class="flaticon-user"></i></a>
-                                        </span>
-                                    </div>
+                                  
                                 </div>
                                
                             </div>
@@ -367,6 +613,17 @@ h2, .h6 {
                 <source src="assets/img/video-1.mp4" type="video/mp4" />
             </video>
         </div>
+    
+
+        <a href="https://wa.me/917411909493" target="_blank" rel="noopener noreferrer" class="whatsapp-float" id="whatsappIcon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        
+        
+        
+        
+        
+
     </section>    
 </div>
 <!-- page title area end  -->
@@ -549,8 +806,7 @@ h2, .h6 {
                                                         <g mask="url(#mask0_36_354)">
                                                             <path
                                                                 d="M9.26562 24.7666L43.3012 24.7666C44.5285 24.7666 45.5234 23.7717 45.5234 22.5444V2.25166C45.5234 1.02435 44.5285 0.0294323 43.3012 0.0294323L9.26562 0.0294323C8.03832 0.0294323 7.0434 1.02435 7.0434 2.25166V22.5444C7.0434 23.7717 8.03832 24.7666 9.26562 24.7666Z"
-                                                                stroke="white" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
+                                                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
                                                         </g>
                                                         <path
                                                             d="M40.7134 17.208L27.6577 17.208M24.9091 17.208L11.8533 17.208"
@@ -1643,7 +1899,7 @@ h2, .h6 {
                     <!-- page title area end  -->
         
                     <!-- Work System Area Start Here  -->
-                    <section class="ms-work-system-area pt-130 pb-130">
+                    <section class="ms-work-system-area pt-40 pb-40">
                         <div class="container">
                                 <div class="ms-work-system-wrap">
                                     <div class="ms-work-system-grid mb-10">
@@ -2061,16 +2317,13 @@ h2, .h6 {
             <!-- Event Area End Here  -->
 
             <!-- gallery area start -->
-            <section id="gal" section class="trending__area p-relative z-index-11 pt-130 pb-60" data-background="assets/img/bg/work-bg.jpg">
+            <section id="gal" class="trending__area p-relative z-index-11 pt-130 pb-60" data-background="assets/img/bg/work-bg.jpg">
                 <div class="container">
                     <div class="row align-items-end mb-25 bdFadeUp">
                         <div class="col-lg-8">
                             <div class="section__title-wrapper mb-40 bd-title-anim">
                                 <span class="section__subtitle">Some Moments</span>
-                                
-                                <h2 class="section__title">Our <span class="ms-text1">Gallery
-                                      </span>
-                                </h2>
+                                <h2 class="section__title">Our <span class="ms-text1">Gallery</span></h2>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -2079,50 +2332,22 @@ h2, .h6 {
                             </div>
                         </div>
                     </div>
-                    <div class="row ms-trending3-wrap bdFadeUp">
-                        <div class="col-xl-4 col-md-4"> <!-- Changed col-md-6 to col-md-4 -->
-                            <div class="ms-trending3-item p-relative fix mb-40">
-                                <div class="ms-trending3-img w-img ms-br-15 p-relative fix mb-30">
-                                    <a href="#eventz"><img src="assets/img/work/a4.jpg" alt="trending image"></a>
-                                    <div class="trending__arrow">
-                                        <a href="assets/img/work/a4.jpg" class="popup-image"><i class="fa-regular fa-arrow-right-long"></i></a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-4"> <!-- Changed col-md-6 to col-md-4 -->
-                            <div class="ms-trending3-item p-relative fix mb-40">
-                                <div class="ms-trending3-img w-img ms-br-15 p-relative fix mb-30">
-                                    <a href="#eventz"><img src="assets/img/work/a3.jpg" alt="trending image"></a>
-                                    <div class="trending__arrow">
-                                        <a href="assets/img/work/a3.jpg" class="popup-image"><i class="fa-regular fa-arrow-right-long"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-4"> <!-- Added this div for the third item -->
-                            <div class="ms-trending3-item p-relative fix mb-40">
-                                <div class="ms-trending3-img w-img ms-br-15 p-relative fix mb-30">
-                                    <a href="#eventz"><img src="assets/img/work/a2.jpg" alt="trending image"></a>
-                                        <a href="assets/img/work/a2.jpg" class="popup-image"></a>
-                                    </div>
-                                    <div>
-                                        <div class="ms-trending3-img w-img ms-br-15 p-relative fix mb-30">
-                                    <a href="#eventz"><img src="assets/img/work/a1.jpg" alt="trending image"></a>
-                                        <a href="assets/img/work/a1.jpg"</a>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-    
-
-    
-                        </div>
-
+                    <div class="modern-gallery masonry-gallery">
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-01.jpg" alt="Gallery 1"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-02.jpg" alt="Gallery 2"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/work/a3.jpg" alt="Gallery 3"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-7.jpg" alt="Gallery 4"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-1.jpg" alt="Gallery 5"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-2.jpg" alt="Gallery 6"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-3.jpg" alt="Gallery 7"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-4.jpg" alt="Gallery 8"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-5.jpg" alt="Gallery 9"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-6.jpg" alt="Gallery 10"><div class="gallery-overlay"></div></div> 
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-9.jpg" alt="Gallery 11"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-8.jpg" alt="Gallery 12"><div class="gallery-overlay"></div></div> 
                     </div>
                 </div>
-                    </section>
+            </section>
             <!-- gallery area end -->
 
 <!-- Popular Events area start -->
@@ -2270,175 +2495,87 @@ data-background="assets/img/trending/tranding-bg.png">
 </section>
 
 </section>
-<!-- Popular events area start -->
 
             <!-- Testimonial area starts here  -->
-            <section class="ms-tm2-area p-relative fix pt-10 pb-125">
+            <section class="ms-tm2-area p-relative fix pt-15 pb-140 mt-100">
                 <div class="ms-tm2-line p-absolute">
                     <img src="assets/img/testimonial/testimonial-line.png" alt="testimonial line">
                 </div>
-                <div class="container">
+                <div class="container-fluid px-5">
                     <div class="row justify-content-center bdFadeUp">
-                        <div class="col-xl-6">
-                            <div class="section__title-wrapper text-center mb-65 bd-title-anim">
+                        <div class="col-xl-8">
+                            <div class="section__title-wrapper text-center mb-75 bd-title-anim">
                                 <span class="section__subtitle" style="margin-top: 30px;">Poeple Who Stand By us</span>
                                 <h2 class="section__title" style="margin-top: 30px;">Our <span class="ms-text1"> Sponsors</span></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="ms-tm2-imgs-wrap p-relative">
-                        <div class="ms-tm2-img1 ms-tm2-shadow p-absolute w-img d-none d-md-block">
-                            <img src="assets/img/clients/10.png" alt="testimonial image">
-                        </div>
-                        <div class="ms-tm2-img2 ms-tm2-shadow p-absolute w-img d-none d-lg-block">
-                            <img src="assets/img/clients/14.png" alt="testimonial image">
-                        </div>
-                        <div class="ms-tm2-img3 ms-tm2-shadow p-absolute w-img d-none d-xl-block">
-                            <img src="assets/img/clients/15.png" alt="testimonial image">
-                        </div>
-                        <div class="ms-tm2-img4 ms-tm2-shadow p-absolute w-img d-none d-md-block">
-                            <img src="assets/img/clients/30.png" alt="testimonial image">
-                        </div>
-                        <div class="ms-tm2-img5 ms-tm2-shadow p-absolute w-img d-none d-lg-block">
-                            <img src="assets/img/clients/18.png" alt="testimonial image">
-                        </div>
-                        <div class="ms-tm2-img6 ms-tm2-shadow p-absolute w-img d-none d-xl-block">
-                            <img src="assets/img/clients/29.png" alt="testimonial image">
-                        </div>
-                        <div class="row justify-content-center bdFadeUp">
-                            <div class="col-xl-8">
-                                <div class="ms-tm2-wrap">
-                                    <div class="ms-tm2-active mb-60">
-                                        <div class="ms-tm2-item text-center">
-                                            <div class="ms-tm2-img-main">
-                                                <div class="ms-tm2-img-wrap p-relative d-inline-block mx-auto">
-                                                    <div class="ms-tm2-signature w-img">
-                                                        <!-- <img src="assets/img/testimonial/testimonial-signature.png"
-                                                            alt="testimonial signature"> -->
-                                                    </div>
-                                                    <div class="ms-tm2-author-img m-img">
-                                                        <img src="assets/img/clients/28.png"
-                                                            alt="testimonial image">
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="ms-tm2-content pt-35">
-                                                    <div class="ms-tm2-quotation mb-25">
-                                                        <i class="flaticon-quotation"></i>
-                                                    </div>
-                                                    <p class="ms-tm2-text mb-30">It is a sequence of Latin words
-                                                        that, as they
-                                                        are
-                                                        positioned, do
-                                                        not form sentences
-                                                        with a complete sense, but give life
-                                                        to a test text useful to fill spaces that will
-                                                        subsequently be occupied
-                                                        from ad
-                                                        hoc
-                                                        texts composed by communication
-                                                        professionals.</p>
-                                                    <div class="ms-tm2-author">
-                                                        <span class="ms-tm2-name">Dio Caprio</span>
-                                                        <span class="ms-tm2-designation">CEO - XYZ
-                                                            Innovation</span>
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                        <div class="ms-tm2-item text-center">
-                                            <div class="ms-tm2-img-main">
-                                                <div class="ms-tm2-img-wrap p-relative d-inline-block mx-auto">
-                                                    <div class="ms-tm2-signature w-img">
-                                                        <!-- <img src="assets/img/testimonial/testimonial-signature.png"
-                                                            alt="testimonial signature"> -->
-                                                    </div>
-                                                    <div class="ms-tm2-author-img m-img">
-                                                        <img src="assets/img/clients/27.png"
-                                                            alt="testimonial image">
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="ms-tm2-content pt-35">
-                                                    <div class="ms-tm2-quotation mb-25">
-                                                        <i class="flaticon-quotation"></i>
-                                                    </div>
-                                                    <p class="ms-tm2-text mb-30">It is a sequence of Latin words
-                                                        that, as they
-                                                        are
-                                                        positioned, do
-                                                        not form sentences
-                                                        with a complete sense, but give life
-                                                        to a test text useful to fill spaces that will
-                                                        subsequently be occupied
-                                                        from ad
-                                                        hoc
-                                                        texts composed by communication
-                                                        professionals.</p>
-                                                    <div class="ms-tm2-author">
-                                                        <span class="ms-tm2-name">Dio Caprio</span>
-                                                        <span class="ms-tm2-designation">CEO - XYZ
-                                                            Innovation</span>
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                        <div class="ms-tm2-item text-center">
-                                            <div class="ms-tm2-img-main">
-                                                <div class="ms-tm2-img-wrap p-relative d-inline-block mx-auto">
-                                                    <div class="ms-tm2-signature w-img">
-                                                   </div>
-                                                    <div class="ms-tm2-author-img m-img">
-                                                        <img src="assets/img/clients/26.png"
-                                                            alt="testimonial image">
-                                                    </div>
-                                                </div>
-                                                <div class="ms-tm2-content pt-35">
-                                                    <div class="ms-tm2-quotation mb-25">
-                                                        <!-- <i class="flaticon-quotation"></i>
-                                                    </div>
-                                                    <p class="ms-tm2-text mb-30">It is a sequence of Latin words
-                                                        that, as they
-                                                        are
-                                                        positioned, do
-                                                        not form sentences
-                                                        with a complete sense, but give life
-                                                        to a test text useful to fill spaces that will
-                                                        subsequently be occupied
-                                                        from ad
-                                                        hoc
-                                                        texts composed by communication
-                                                        professionals.</p>
-                                                    <div class="ms-tm2-author">
-                                                        <span class="ms-tm2-name">Dio Caprio</span>
-                                                        <span class="ms-tm2-designation">CEO - XYZ
-                                                            Innovation</span> -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="ms-tm2-dots ms-tm-dots-horizontal ms-round-dots d-flex justify-content-center mt-20">
-                                    </div>
+             
+            <!-- Partner Area Start Here  -->
+            <div class="ms-partner-area fix pb-140">
+                <div class="container-fluid px-5">
+                    <div class="ms-border5 pt-140">
+                        <div class="swiper-container ms-partner-active">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-01.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-02.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-03.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-04.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-05.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-04.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-01.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-02.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-03.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-04.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-05.png" alt="partner image">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/partner/partner-04.png" alt="partner image">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Testimonial area end here  -->
+            </div>
+            </section>      
+            <!-- Partner Area End Here  -->
+
 
             <!-- News area start here  -->
             
-            <section class="ms-news3-area ms-bg-2 p-relative fix pt-130 pb-90" section id="clients" data-background="assets/img/bg/work-bg.jpg";>
+            <section class="trending__area p-relative fix pt-130 include__bg pb-130" section id="clients" data-background="assets/img/bg/work-bg.jpg";>
                 <div class="container">
                     <div class="row justify-content-center bdFadeUp">
                         <div class="col-xl-6">
-                            <div class="section__title-wrapper text-center mb-25 bd-title-anim">
+                            <div class="section__title-wrapper text-center mb-75 bd-title-anim">
                                 <span class="section__subtitle">Our Clients</span>
                                 <h2 class="section__title" style="margin-top: 30px;"><span class="ms-text1">Who</span> Chose Us</h2>
+                            
                             </div>
+                        </div>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -2706,92 +2843,86 @@ data-background="assets/img/trending/tranding-bg.png">
             </section> -->
             <!-- CTA Area End Here  -->
 
-   <!-- team area start here  -->
-   <section class="ms-team-area ms-bg-2 pt-125 pb-90" data-background="assets/img/bg/11.jpg">
-    <div class="container">
-        <div class="row justify-content-center mb-25 bdFadeUp">
-            <div class="col-xl-6">
-                <div class="section__title-wrapper text-center mb-40">
-                    <div class="section__title-wrapper text-center mb-25 bd-title-anim">
-                        <span class="section__subtitle">Hear What Others Say</span>
-                    <h2 class="section__title bd-title-anim">Testimonials</h2>
+    <!-- Testimonial area end here  -->
+    <section class="ms-tm2-area p-relative fix pt-130 pb-130">
+        <div class="ms-tm2-line p-absolute">
+            <img src="assets/img/testimonial/testimonial-line.png" alt="testimonial line">
+        </div>
+        <div class="container">
+            <div class="row justify-content-center bdFadeUp">
+                <div class="col-xl-6">
+                    <div class="section__title-wrapper text-center mb-65 bd-title-anim">
+                        <span class="section__subtitle">Awesome Feedbacks</span>
+                        <h2 class="section__title">Testimonials 
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row ms-team-inner bdFadeUp">
-            <div class="col-xl-4 col-md-6">
-                <div class="ms-team-item-wrap">
-                    <div class="ms-team-item p-relative">
-                        <div class="ms-team-img">
-                            <a href="#testi"><img src="assets/img/team/z1.jpg"
-                                    alt="team image"></a>
-                           
-                        </div>
-                        <h3 class="ms-team-title"><a href="#testi">Essie L. Whitman</a>
-                        </h3>
-                    </div>
+        <div class="container">
+            <div class="ms-tm2-imgs-wrap p-relative">
+           
                 </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="ms-team-item-wrap">
-                    <div class="ms-team-item p-relative">
-                        <div class="ms-team-img">
-                            <a href="#testi"><img src="assets/img/team/z2.jpg"
-                                    alt="team image"></a>
-                         
-                        </div>
-                        <h3 class="ms-team-title"><a href="#testi">Maria D. Guthrie</a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="ms-team-item-wrap">
-                    <div class="ms-team-item p-relative">
-                        <div class="ms-team-img">
-                            <a href="#testi"><img src="assets/img/team/z3.jpg"
-                                    alt="team image"></a>
-                           
-                        </div>
-                        <h3 class="ms-team-title"><a class="ms-team-title" href="#testi">Mark
-                                W.
-                                Barrientes</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="ms-team-item-wrap">
-                    <div class="ms-team-item p-relative">
-                        <div class="ms-team-img">
-                            <a href="#testi"><img src="assets/img/team/z4.jpg"
-                                    alt="team image"></a>
+                <div class="row justify-content-center bdFadeUp">
+                    <div class="col-xl-8">
+                        <div class="ms-tm2-wrap">
+                            <div class="ms-tm2-active mb-60">
+                                <div class="ms-tm2-item text-center">
+                                        <div class="ms-tm2-img-wrap p-relative d-inline-block mx-auto">
+                                          
+                                        <div class="ms-tm2-content pt-35">
+                                            <div class="ms-tm2-quotation mb-25">
+                                                <i class="flaticon-quotation"></i>
+                                            </div>
+                                            <p class="ms-tm2-text mb-30">" Regovents made our corporate conference seamless and impressive.
+                                                "</p>
+                                            <div class="ms-tm2-author">
+                                                <span class="ms-tm2-name">Mark T. </span>
+                                                <span class="ms-tm2-designation">CEO of TechFirm Inc.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-tm2-item text-center">
+                                    <div class="ms-tm2-img-main">
+                                     
+                                        <div class="ms-tm2-content pt-35">
+                                            <div class="ms-tm2-quotation mb-25">
+                                                <i class="flaticon-quotation"></i>
+                                            </div>
+                                            <p class="ms-tm2-text mb-30">"The team’s creativity and professionalism exceeded our expectations for our product launch."
+                                            </p>
+                                            <div class="ms-tm2-author">
+                                                <span class="ms-tm2-name">Lisa R.</span>
+                                                <span class="ms-tm2-designation"> Marketing Director</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-tm2-item text-center">
+                                
+                                        <div class="ms-tm2-content pt-35">
+                                            <div class="ms-tm2-quotation mb-25">
+                                                <i class="flaticon-quotation"></i>
+                                            </div>
+                                            <p class="ms-tm2-text mb-30">"From planning to execution, Regovents handled everything perfectly for our anniversary party."
+                                            </p>
+                                            <div class="ms-tm2-author">
+                                                <span class="ms-tm2-name">David</span>
+                                                <span class="ms-tm2-designation">Customer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             
                         </div>
-                        <h3 class="ms-team-title"><a class="ms-team-title" href="#testi">John
-                                L.
-                                Dombrowski</a></h3>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="ms-team-item-wrap">
-                    <div class="ms-team-item p-relative">
-                        <div class="ms-team-img">
-                            <a href="#testi"><img src="assets/img/team/z5.jpg"
-                                    alt="team image"></a>
-                          
-                        </div>
-                        <h3 class="ms-team-title"><a class="ms-team-title" href="#testi">Donald
-                                J.
-                                Green</a></h3>
-                    </div>
-                </div>
-            </div>
-         
         </div>
-    </div>
-</section>
-<!-- team area end here  -->
+    </section>
+    <!-- Testimonial area end here  -->
 
 
         
@@ -2933,35 +3064,80 @@ data-background="assets/img/trending/tranding-bg.png">
             <!-- Partner Area End Here  -->
 
 <!-- Footer Area Start Here -->
-<footer>
-    <div class="ms-footer3-wrap include__bg zindex-1 p-relative" data-background="assets/img/bg/work-bg.jpg">
-        <div class="ms-overlay ms-overlay5 p-absolute zindex--1"></div>
-            <div class="container">
-                <div class="ms-footer2-logo mb-130 mx-auto">
-                    <a href="index.html"><img src="assets/img/logo/footer3-logo.png" alt="footer logo"></a>
+<footer class="mil-dark-bg mt-50">
+    <div class="mi-invert-fix">
+        <div class="container mil-p-120-60">
+            <div class="row justify-content-between">
+                <div class="col-md-4 col-lg-4 mil-mb-60">
+                    <!-- <form class="mil-subscribe-form mil-up" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="657e9e5c-4ece-429d-b30b-837af53831a6" /> -->
+                        <!-- <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+                        <input type="email" name="email" placeholder="Enter your email" required />
+                        <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                    </form> -->
                 </div>
-                
-                <div class="row align-items-middle">
-                    <div class="col-md-3">
-                        <img src="images/logo.png" class="logo-small" alt=""><br>
-                    </div>
-                    <div class="col-md-6">
-                        <h5 style="color: #D9FF00;">Transforming Visions into Digital Victories...Where Creativity Meets Conversion!</h5>
+                <div class="col-md-7 col-lg-6">
+                    <div class="row justify-content-end">
+                        <div class="col-md-6 col-lg-7">
+                            <nav class="mil-footer-menu mil-mb-60">
+                                <ul>
+                                    <li class="mil-up mil-active"><a href="index.html">Home</a></li>
+                                    <li class="mil-up"><a href="#ms-popular__area">Services</a></li>
+                                    <li class="mil-up"><a href="#gal">Gallery</a></li>
+                                    <li class="mil-up"><a href="#eventz">Events</a></li>
+                                    <li class="mil-up"><a href="#contact">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-6 col-lg-5">
+                            <ul class="mil-menu-list mil-up mil-mb-60">
+                                <li><a href="https://regortz.com/privacy.html" class="mil-light-soft">Privacy Policy</a></li>
+                                <li><a href="https://regortz.com/FAQs.html" class="mil-light-soft">FAQs</a></li>
+                                <li><a href="https://regortz.com/careers.html" class="mil-light-soft">Careers</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="row justify-content-center mt-3">
-                    <div class="col-md-12 text-center">
-                        <a href="#faq" class="btn btn-link" style="color: #D9FF00;">FAQ</a>
-                        <a href="#careers" class="btn btn-link" style="color: #D9FF00;">Careers</a>
+            </div>
+            <div class="row justify-content-between flex-sm-row-reverse">
+                <div class="col-md-7 col-lg-6"></div>
+                <div class="col-md-4 col-lg-6 mil-mb-60">
+                    <div class="mil-vert-between">
+                        <div class="mil-mb-30">
+                            <ul class="mil-social-icons mil-up">
+                                <li>
+                                    <a href="https://www.instagram.com/regortz/" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/Regortz" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/regortzindia" target="_blank">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/regortz/" target="_blank">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <br>
+
+                        <p class="mil-light-soft mil-up">© Copyright 2025 - Regortz. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-<!-- footer close -->
-<!-- footer close -->
-<!-- Footer Area End -->
+<!-- Footer end -->
     <!-- Back to top start -->
     <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -3012,6 +3188,24 @@ data-background="assets/img/trending/tranding-bg.png">
         showSlide(1);
     });
 </script>
+
+
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            document.getElementById("whatsappIcon").style.display = "block";
+        }, 5000); // 5 seconds delay
+    };
+</script>
+
+
+
+
+<script>
+    document.getElementById("whatsappIcon").addEventListener("click", function(event) {
+        event.stopPropagation(); // Prevents interference from other scripts
+    });
+    </script>
 
 
 

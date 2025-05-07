@@ -75,9 +75,9 @@
   --clr-common-heading: #333333;
   --clr-common-body-text: #858585;
   --clr-common-body: #0D0D0D;
-  --clr-theme-1: #FF589B;
+  --clr-theme-1: #D9FF00;
   --clr-theme-2: #69E7CB;
-  --clr-theme-3: #FBC21E;
+  --clr-theme-3: #EAFF99;
   --clr-text-primary: #ffffff;
   --clr-text-secondary: #111111;
   --clr-text-1: #414141;
@@ -154,6 +154,7 @@ body {
   color: var(--clr-common-body-text);
   line-height: 26px;
   background: var(--clr-common-body);
+  
 }
 
 h1,
@@ -295,6 +296,16 @@ input[type=color] {
   opacity: 1;
   font-size: 15px;
 }
+
+
+.progress-wrap svg.progress-circle path {
+  stroke: #EAFF99; /* This will use your theme color */
+  stroke-width: 4;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
 
 /*----------------------------------------
    Flaction customize
@@ -1596,6 +1607,80 @@ a:visited.ui-button,
     display: none;
   }
 }
+
+/* Modern Gallery Masonry Styles */
+.masonry-gallery {
+  column-count: 4;
+  column-gap: 24px;
+}
+@media (max-width: 1200px) {
+  .masonry-gallery { column-count: 3; }
+}
+@media (max-width: 900px) {
+  .masonry-gallery { column-count: 2; }
+}
+@media (max-width: 600px) {
+  .masonry-gallery { column-count: 1; }
+}
+.masonry-gallery .modern-gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 24px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+.masonry-gallery .modern-gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.modern-gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  transition: box-shadow 0.3s;
+}
+.modern-gallery-item img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 0.4s cubic-bezier(.25,.8,.25,1);
+}
+.modern-gallery-item:hover img {
+  transform: scale(1.08);
+}
+.gallery-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.38);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.modern-gallery-item:hover .gallery-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.gallery-overlay i {
+  color: #fff;
+  font-size: 2.2rem;
+  opacity: 0.85;
+}
+@media (max-width: 767px) {
+  .modern-gallery-item img {
+    height: 180px;
+  }
+}
 [dir=rtl] .mouseCursor {
   left: 0;
   right: auto;
@@ -2232,7 +2317,7 @@ a:visited.ui-button,
 }
 
 .ms-text1 {
-  color: var(--clr-bg-1);
+  color: #D9FF00;
 }
 
 .white-text {
@@ -3637,6 +3722,10 @@ Animate Underline
   display: inline-block;
 }
 
+
+
+
+
 /* ------------------------------------------ */
 /*  15 - meanmenu css  */
 /* ------------------------------------------ */
@@ -3939,6 +4028,7 @@ Animate Underline
 
 #header-sticky.sticky .ms-border2 {
   border-color: transparent;
+  top: 0 !important;
 }
 
 /* ------------------------------------------ */
@@ -7133,31 +7223,6 @@ Animate Underline
   height: 125px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .ms-tm2-img2 {
-    inset-inline-start: 80px;
-  }
-}
-
-.ms-tm2-img3 {
-  top: 66%;
-  width: 100px;
-  height: 100px;
-}
-
-.ms-tm2-img4 {
-  inset-inline-end: 0;
-  width: 70px;
-  height: 70px;
-  top: 0;
-}
-
-.ms-tm2-img5 {
-  top: 25%;
-  inset-inline-end: 185px;
-  width: 125px;
-  height: 125px;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .ms-tm2-img5 {
     inset-inline-end: 80px;
   }
@@ -8730,10 +8795,6 @@ Animate Underline
   transition: all 0.9s ease-out 0s;
 }
 
-.ms-team-item:hover .ms-team-img::after {
-  opacity: 0.8;
-  visibility: visible;
-}
 .ms-team-item:hover .ms-team-social a {
   visibility: visible;
   opacity: 1;
@@ -10358,11 +10419,6 @@ Animate Underline
 .ms-product-table .ms-table-action:hover {
   color: var(--clr-theme-1);
 }
-.ms-product-table tfoot th {
-  padding: 30px 0 0 0;
-  border-bottom: 0;
-}
-
 .ms-product-total {
   background: var(--clr-bg-2);
   border-radius: 15px;

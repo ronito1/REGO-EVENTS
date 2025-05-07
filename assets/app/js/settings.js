@@ -47,7 +47,7 @@
 				 <div class="row row-cols-4 gy-2 gx-2">
 					<div class="col">
 					   <div class="bd-theme-color-item bd-color-active">
-						  <button class="bd-theme-color-btn bd-color-settings-btn d-none" data-color-default="#FF589B" type="button" data-color="#FF589B"></button>
+						  <button class="bd-theme-color-btn bd-color-settings-btn d-none" data-color-default="#D9FF00" type="button" data-color="#FF589B"></button>
 						  <button class="bd-theme-color-btn bd-color-settings-btn" type="button" data-color="#FF589B"></button>
 					   </div>
 					</div>
