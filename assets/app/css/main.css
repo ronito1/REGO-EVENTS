@@ -5843,21 +5843,28 @@ Animate Underline
 
 .ms-work-system-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr); /* Use 3 equal columns */
   justify-content: space-between;
+  gap: 20px; /* Add gap between items */
+  align-items: center; /* Center items vertically */
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
   .ms-work-system-grid {
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr); /* Use 2 columns for medium screens */
+    align-items: center; /* Center items vertically */
   }
 }
-@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+
+@media only screen and (max-width: 767px) {
   .ms-work-system-grid {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr; /* Use 1 column for small screens */
+    align-items: center; /* Center items vertically */
   }
 }
+
 .ms-work-system-grid .work__features-item:last-child {
-  margin-bottom: 55px;
+  margin-bottom: 55px; /* Maintain margin for the last item */
 }
 
 .ms-work-system-img img {
@@ -5865,9 +5872,9 @@ Animate Underline
   object-fit: cover;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+@media only screen and (max-width: 991px) {
   .work__content-space {
-    padding-inline-start: 0;
+    padding-inline-start: 0; /* Adjust padding for smaller screens */
   }
 }
 
