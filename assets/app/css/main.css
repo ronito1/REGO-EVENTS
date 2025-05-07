@@ -154,7 +154,15 @@ body {
   color: var(--clr-common-body-text);
   line-height: 26px;
   background: var(--clr-common-body);
-  
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  scroll-behavior: smooth;
+
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Adjust this value based on your header height */
 }
 
 h1,

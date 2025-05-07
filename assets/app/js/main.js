@@ -52,19 +52,57 @@
 	/*======================================
 	smoothSctollTop js
 	========================================*/
-	function smoothSctollTop() {
-		$('.smooth a').on('click', function (event) {
-			var target = $(this.getAttribute('href'));
-			if (target.length) {
-				event.preventDefault();
-				$('html, body').stop().animate({
-					scrollTop: target.offset().top - 100
-				}, 1000);
-			}
-		});
-	}
-	smoothSctollTop();
+	/*======================================
+smoothSctollTop js
+========================================*/
+function smoothSctollTop() {
+    $('.smooth a').on('click', function (event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - 100
+            }, 1000);
+        }
+    });
+}
+smoothSctollTop();
 
+// Enhanced smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Smooth scroll for manual scrolling
+window.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    const delta = e.deltaY;
+    window.scrollBy({
+        top: delta,
+        behavior: 'smooth'
+    });
+}, { passive: false });
+
+// Smooth scroll for the back-to-top button
+const progressWrap = document.querySelector('.progress-wrap');
+if (progressWrap) {
+    progressWrap.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 	/*======================================
 	Sidebar Toggle

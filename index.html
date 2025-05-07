@@ -381,6 +381,33 @@ h2, .h6 {
 .mil-menu-list li a:hover {
     color: #D9FF00 !important;
 }
+* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px; /* Slightly thinner for more elegance */
+    background-color: #1a1a1a;
+}
+
+::-webkit-scrollbar-track {
+    background: #EAFF00;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #EAFF00;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #EAFF00;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-theme-1) #1a1a1a;
+}
+
 </style>
 <body>
 
@@ -678,7 +705,7 @@ h2, .h6 {
 
             <!-- work area start -->
             <section class="work__area work-overlay pt-130 pb-70 include__bg"
-                data-background="assets/img/bg/work-bg.jpg">
+                data-background="assets/img/event/7.jpg">
                 <div class="container">
                     <div class="row align-items-center bdFadeUp">
                         <div class="col-xl-6">
@@ -960,9 +987,7 @@ h2, .h6 {
             <!-- work area end -->
 
             <!-- Popular  area start -->
-            <section class="ms-popular__area pt-130 pb-100 p-relative include__bg"
-                data-background="assets/img/trending/tranding-bg.png">
-                <section id="ms-popular__area">
+            <section class="ms-popular__area pt-130 pb-100 p-relative include__bg" id="ms-popular__area" data-background="assets/img/trending/tranding-bg.png">
                 <div class="ms-overlay ms-overlay4 p-absolute"></div>
                 <div class="container">
                     <div class="row align-items-end mb-25 bdFadeUp">
@@ -1885,7 +1910,7 @@ h2, .h6 {
                 <main>
                     <!-- page title area start  -->
                     <section class="page-title-area page-title-spacing p-relative zindex-1 "
-                        data-background="assets/img/bg/work-bg.jpg">
+                        data-background="assets/img/event/11.jpg">
                         <section id="ms-popular__area2">
                         <div class="ms-overlay ms-overlay8 p-absolute zindex--1"></div>
                         <div class="container">
@@ -2317,7 +2342,7 @@ h2, .h6 {
             <!-- Event Area End Here  -->
 
             <!-- gallery area start -->
-            <section id="gal" class="trending__area p-relative z-index-11 pt-130 pb-60" data-background="assets/img/bg/work-bg.jpg">
+            <section id="gal" class="trending__area p-relative z-index-11 pt-130 pb-60" data-background="assets/img/event/10.jpg">
                 <div class="container">
                     <div class="row align-items-end mb-25 bdFadeUp">
                         <div class="col-lg-8">
@@ -2351,8 +2376,9 @@ h2, .h6 {
             <!-- gallery area end -->
 
 <!-- Popular Events area start -->
-<section class="trending__area p-relative fix pt-130 include__bg pb-130" section id="eventz"
-data-background="assets/img/trending/tranding-bg.png">
+ 
+<section class="trending__area p-relative fix pt-130 include__bg pb-130" id="eventz"
+data-background="assets/img/event/7.jpg">
 <div class="ms-overlay ms-overlay4 p-absolute"></div>
 <div class="container">
     <div class="row align-items-end mb-25 bdFadeUp ">
@@ -2367,13 +2393,14 @@ data-background="assets/img/trending/tranding-bg.png">
 </div>
 <div class="ms-trending-active-wrap bdFadeUp">
     <div class="swiper-container ms-trending-active">
+        
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="ms-trending2-item fix">
                     <div class="ms-trending2-overlay p-absolute"></div>
                     <span class="trending__title">RegoEvents</span>
                     <div class="trending__price">
-                        <span>From $99</span>
+                        <span></span>
                     </div>
                     <div class="ms-trending2-img w-img">
                         <a href="#eventz"><img src="assets/img/trending/a.jpg"
@@ -2397,7 +2424,7 @@ data-background="assets/img/trending/tranding-bg.png">
                     <div class="ms-trending2-overlay p-absolute"></div>
                     <span class="trending__title">RegoEvents</span>
                     <div class="trending__price">
-                        <span>From $119</span>
+                        <span></span>
                     </div>
                     <div class="ms-trending2-img w-img">
                         <a href="#eventz"><img src="assets/img/trending/b.jpg"
@@ -2421,7 +2448,7 @@ data-background="assets/img/trending/tranding-bg.png">
                     <div class="ms-trending2-overlay p-absolute"></div>
                     <span class="trending__title">RegoEvents</span>
                     <div class="trending__price">
-                        <span>From $55</span>
+                        <span></span>
                     </div>
                     <div class="ms-trending2-img w-img">
                         <a href="#eventz"><img src="assets/img/trending/c.jpg"
@@ -2445,7 +2472,7 @@ data-background="assets/img/trending/tranding-bg.png">
                     <div class="ms-trending2-overlay p-absolute"></div>
                     <span class="trending__title">RegoEvents</span>
                     <div class="trending__price">
-                        <span>From $90</span>
+                        <span></span>
                     </div>
                     <div class="ms-trending2-img w-img">
                         <a href="#eventz"><img src="assets/img/trending/d.jpg"
@@ -2470,7 +2497,7 @@ data-background="assets/img/trending/tranding-bg.png">
                     <div class="ms-trending2-overlay p-absolute"></div>
                     <span class="trending__title">RegoEvents</span>
                     <div class="trending__price">
-                        <span>From $90</span>
+                        <span></span>
                     </div>
                     <div class="ms-trending2-img w-img">
                         <a href="#eventz"><img src="assets/img/trending/e.jpg"
@@ -2497,7 +2524,7 @@ data-background="assets/img/trending/tranding-bg.png">
 </section>
 
             <!-- Testimonial area starts here  -->
-            <section class="ms-tm2-area p-relative fix pt-15 pb-140 mt-100">
+            <section class="ms-tm2-area p-relative fix pt-15 pb-140 mt-100" data-background="assets/img2.png">
                 <div class="ms-tm2-line p-absolute">
                     <img src="assets/img/testimonial/testimonial-line.png" alt="testimonial line">
                 </div>
@@ -2565,7 +2592,7 @@ data-background="assets/img/trending/tranding-bg.png">
 
             <!-- News area start here  -->
             
-            <section class="trending__area p-relative fix pt-130 include__bg pb-130" section id="clients" data-background="assets/img/bg/work-bg.jpg";>
+            <section class="trending__area p-relative fix pt-130 include__bg pb-130" section id="clients" data-background="assets/img/event/bg1.jpg";>
                 <div class="container">
                     <div class="row justify-content-center bdFadeUp">
                         <div class="col-xl-6">
@@ -2890,7 +2917,7 @@ data-background="assets/img/trending/tranding-bg.png">
                                             <div class="ms-tm2-quotation mb-25">
                                                 <i class="flaticon-quotation"></i>
                                             </div>
-                                            <p class="ms-tm2-text mb-30">"The team’s creativity and professionalism exceeded our expectations for our product launch."
+                                            <p class="ms-tm2-text mb-30">"The team's creativity and professionalism exceeded our expectations for our product launch."
                                             </p>
                                             <div class="ms-tm2-author">
                                                 <span class="ms-tm2-name">Lisa R.</span>
@@ -3064,6 +3091,7 @@ data-background="assets/img/trending/tranding-bg.png">
             <!-- Partner Area End Here  -->
 
 <!-- Footer Area Start Here -->
+<section>
 <footer class="mil-dark-bg mt-50">
     <div class="mi-invert-fix">
         <div class="container mil-p-120-60">
@@ -3137,6 +3165,8 @@ data-background="assets/img/trending/tranding-bg.png">
         </div>
     </div>
 </footer>
+</body>
+</section>
 <!-- Footer end -->
     <!-- Back to top start -->
     <div class="progress-wrap">
@@ -3166,7 +3196,7 @@ data-background="assets/img/trending/tranding-bg.png">
     <script src="assets/app/js/jplayer.playlist.js"></script>
     <script src="assets/app/js/settings.js"></script>
     <script src="assets/app/js/main.js"></script>
-
+    
     <script>
     function showSlide(slideIndex) {
         const tabs = document.querySelectorAll('.tab_single_content');
