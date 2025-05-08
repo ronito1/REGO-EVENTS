@@ -75,22 +75,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth',
                 block: 'start'
             });
         }
     });
 });
-
-// Smooth scroll for manual scrolling
-window.addEventListener('wheel', function(e) {
-    e.preventDefault();
-    const delta = e.deltaY;
-    window.scrollBy({
-        top: delta,
-        behavior: 'smooth'
-    });
-}, { passive: false });
 
 // Smooth scroll for the back-to-top button
 const progressWrap = document.querySelector('.progress-wrap');
