@@ -69,16 +69,15 @@ function smoothSctollTop() {
 smoothSctollTop();
 
 // Enhanced smooth scroll for all anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                block: 'start'
-            });
-        }
-    });
+$('a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    const targetId = $(this).attr('href');
+    const targetElement = $(targetId);
+    if (targetElement.length) {
+        $('html, body').stop().animate({
+            scrollTop: targetElement.offset().top
+        }, 500); // Reduced duration for faster scrolling
+    }
 });
 
 // Smooth scroll for the back-to-top button
