@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/app/css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
 
@@ -203,30 +204,7 @@ h2, .h6 {
 .main-menu ul li a:hover {
   color: #D9FF00;
 }
-
-/* Hamburger menu: always visible on right */
-.header__hamburger {
-  display: flex !important;
-  align-items: center;
-  margin-left: auto;
-}
-
-.hamburger-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.hamburger-btn span {
-  display: block;
-  width: 28px;
-  height: 3px;
-  background: #D9FF00;
-  margin: 5px 0;
-  border-radius: 2px;
-}
-
+    
 /* Hide extra header buttons for minimal look */
 .header__btn, .user__acount {
   display: none !important;
@@ -285,7 +263,7 @@ h2, .h6 {
 .whatsapp-float {
     position: fixed;
   bottom: 20px; /* Keep this to position from the bottom */
-  left: 25px;   /* Change from right to left */
+  right: 25px;   /* Change from right to left */
   width: 60px;
   height: 60px;
   z-index: 1000;
@@ -305,19 +283,35 @@ h2, .h6 {
 }
 
 .mil-footer-menu {
-    margin-bottom: 120px;
+    margin-bottom: 60px;
+    display: flex; /* Ensure it uses flexbox */
+    justify-content: flex-start; /* Align items to the left */
 }
+
+.mil-footer-menu ul {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Space out the items evenly */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    
+}
+
 .mil-footer-menu ul li {
-    list-style-type: none;
-    margin-bottom: 30px;
+    list-style: none;
+    margin: 20px; /* Add horizontal spacing between items */
+
 }
+
 .mil-footer-menu ul li a {
-    display: block;
+    display: flex;
+    
     font-weight: 500;
     font-size: 28px;
     color: rgba(255, 255, 255, 0.9);
+    
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
+
 .mil-footer-menu ul li a:hover {
     transform: translateX(10px);
     color: rgb(217, 255, 0);
@@ -327,39 +321,26 @@ h2, .h6 {
         font-size: 22px;
     }
 }
-.mil-subscribe-form {
-    position: relative;
-    height: 70px;
-    width: 100%;
-}
-.mil-subscribe-form input {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: rgb(0, 0, 0);
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: none;
-    border-radius: 70px;
-    padding: 0 0 0 50px;
-    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
-}
-.mil-subscribe-form .mil-button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-
-    .footer-spacing {
-    margin-top: 50px; /* Adjust the value as needed */
+.mil-vert-between {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items to the top */
+    height: 100%; /* Ensure it takes full height */
 }
 
+.mil-mb-30 {
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-top: 0;
+}
 
+.mil-social-icons {
+    margin-top: 0; /* Remove top margin if any */
 }
 
 .mil-social-icons li {
     display: inline-block;
+    margin-top: 50px; /* Remove top margin if any */
+    margin-left: 5px;
     margin-right: 15px; /* Adjust spacing between icons */
 }
 
@@ -374,6 +355,18 @@ h2, .h6 {
 }
 
 
+.mil-menu-list {
+    display: flex; /* Use flexbox for horizontal alignment */
+    
+    justify-content: flex-end; /* Align items to the right */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Ensure the list takes full width */
+}
+
+.mil-menu-list li {
+    margin-left: 20px; /* Add spacing between items */
+}
 .mil-menu-list li a {
     transition: color 0.3s ease;
 }
@@ -381,7 +374,11 @@ h2, .h6 {
 .mil-menu-list li a:hover {
     color: #D9FF00 !important;
 }
-
+@media (max-width: 768px) {
+    footer {
+        display: none; /* Hide the footer on mobile devices */
+    }
+}
 /* Add this to your CSS file */
 .header {
     background-color: transparent; /* Initial state */
@@ -451,10 +448,11 @@ h2, .h6 {
     height: auto; /* Maintain aspect ratio */
     cursor: pointer; /* Change cursor to pointer for better UX */
 }
-
 .ms-dot-toggle img {
     max-width: 100%; /* Ensure the image scales properly */
     height: auto; /* Maintain aspect ratio */
+    margin-left: auto;
+
 }
 @media (min-width: 769px) { /* Adjust the min-width as needed */
     .sidebar__toggle {
@@ -502,6 +500,39 @@ h2, .h6 {
         top: 10px; /* Adjust the top spacing as needed */
         z-index: 1000; /* Ensure it appears above other elements */
     }
+}
+
+.mil-footer-menu,
+.mil-menu-list {
+    width: 100%; /* Ensure the lists take full width */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+}
+
+.mil-footer-menu ul,
+.mil-menu-list {
+    display: flex; /* Use flexbox for alignment */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.mil-footer-menu ul li,
+.mil-menu-list li {
+    margin: 0 10px; /* Adjust spacing between items */
+}
+
+@media (max-width: 768px) {
+    .ms-page-title {
+        font-size: 40px; /* Adjust the size as needed */
+    }
+    @media (max-width: 768px) {
+    .de-video-content h2 {
+        font-size: 30px; /* Adjust the size as needed */
+    }
+}
+
+
 }
 
 </style>
@@ -561,11 +592,7 @@ h2, .h6 {
                         </div>
                     </div>
                
-                    <div class="offcanvas__search mb-30">
-                        <form action="#">
-                            <input type="text" placeholder="Search Here">
-                            <button type="submit"><i class="far fa-search"></i></button>
-                        </form>
+                   
                     </div>
                     <div class="hr-1 mt-30 mb-30 d-xl-block"></div>
                     <div class="mobile-menu2 fix mb-30  d-xl-block">
@@ -577,13 +604,13 @@ h2, .h6 {
                             <li><a href="#gal">Gallery</a></li>
                             <li><a href="#eventz">Events</a></li>
                             <li><a href="#clients">Our Clients</a></li>
-                            <li><a href="#contact">Join Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
                     <div class="hr-1 mt-30 mb-30 d-xl-block"></div>
                     <div class="offcanvas__btn mb-30">
 
-                        <a class="ms-border-btn" href="services.html"><i class="fa-solid fa-plus"></i> List Your
+                        <a class="ms-border-btn" href="#contact"><i class="fa-solid fa-plus"></i> List Your
                             Service</a>
                     </div>
                     <div class="offcanvas__social">
@@ -650,7 +677,7 @@ h2, .h6 {
 <!-- Header area end -->
  <!-- Header area start -->
  <header>
-    <div id="header-sticky" class="header__area header-1 ms-header-fixed ms-bg-body">
+    <div id="header-sticky" class="header__area header-1 ms-header-fixed">
         <div class="container-fluid ms-maw-1710">
             <div class="row align-items-center">
                 <div class="col custom-width-10"> <!-- Apply the custom class here -->
@@ -692,7 +719,7 @@ h2, .h6 {
                                                     <a href="#clients"> Our Clients</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#contact"> Join Us</a>
+                                                    <a href="#contact"> Contact</a>
                                                 </li>
                                             </ul>
                                         </nav>
@@ -706,6 +733,11 @@ h2, .h6 {
                                         </div>
         </div>
     </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </header>
 <!-- Header area end -->
     
@@ -2145,7 +2177,8 @@ h2, .h6 {
                                                                 d="M36.5665 12.3724C38.1067 12.677 39.8538 12.4088 41.4313 11.4975C44.5453 9.70015 45.8206 6.07889 44.2793 3.4094C42.7388 0.740078 38.965 0.0338131 35.8508 1.83184C34.2735 2.7425 33.1675 4.12203 32.6608 5.60739L36.5665 12.3724Z"
                                                                 stroke="white" stroke-linecap="round" stroke-linejoin="round" />
                                                             <mask id="mask0_36_396" style="mask-type:alpha"
-                                                                maskUnits="userSpaceOnUse" x="38" y="2" width="4" height="4">
+                                                                maskUnits="userSpaceOnUse" x="38" y="2" width="4"
+                                                                height="4">
                                                                 <path
                                                                     d="M38.9634 2.95068L40.5035 3.36336L40.0908 4.90348L38.5507 4.4908L38.9634 2.95068Z"
                                                                     stroke="#2690FF" stroke-linecap="round"
@@ -2302,7 +2335,8 @@ h2, .h6 {
                                                                 d="M36.5665 12.3724C38.1067 12.677 39.8538 12.4088 41.4313 11.4975C44.5453 9.70015 45.8206 6.07889 44.2793 3.4094C42.7388 0.740078 38.965 0.0338131 35.8508 1.83184C34.2735 2.7425 33.1675 4.12203 32.6608 5.60739L36.5665 12.3724Z"
                                                                 stroke="white" stroke-linecap="round" stroke-linejoin="round" />
                                                             <mask id="mask0_36_396" style="mask-type:alpha"
-                                                                maskUnits="userSpaceOnUse" x="38" y="2" width="4" height="4">
+                                                                maskUnits="userSpaceOnUse" x="38" y="2" width="4"
+                                                                height="4">
                                                                 <path
                                                                     d="M38.9634 2.95068L40.5035 3.36336L40.0908 4.90348L38.5507 4.4908L38.9634 2.95068Z"
                                                                     stroke="#2690FF" stroke-linecap="round"
@@ -2434,39 +2468,6 @@ h2, .h6 {
 
             <!-- Event Area End Here  -->
 
-            <!-- gallery area start -->
-            <section id="gal" class="trending__area p-relative z-index-11 pt-130 pb-60" data-background="assets/img/event/10.jpg">
-                <div class="container">
-                    <div class="row align-items-end mb-25 bdFadeUp">
-                        <div class="col-lg-8">
-                            <div class="section__title-wrapper mb-40 bd-title-anim">
-                                <span class="section__subtitle">Some Moments</span>
-                                <h2 class="section__title">Our <span class="ms-text1">Gallery</span></h2>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="trending-btn mb-40 d-flex justify-content-lg-end">
-                                <a class="border__btn" href="#eventz">View All</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modern-gallery masonry-gallery">
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-01.jpg" alt="Gallery 1"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-02.jpg" alt="Gallery 2"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/work/a3.jpg" alt="Gallery 3"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-7.jpg" alt="Gallery 4"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-1.jpg" alt="Gallery 5"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-2.jpg" alt="Gallery 6"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-3.jpg" alt="Gallery 7"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-4.jpg" alt="Gallery 8"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-5.jpg" alt="Gallery 9"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-6.jpg" alt="Gallery 10"><div class="gallery-overlay"></div></div> 
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-9.jpg" alt="Gallery 11"><div class="gallery-overlay"></div></div>
-                        <div class="modern-gallery-item"><img src="assets/img/gallery-8.jpg" alt="Gallery 12"><div class="gallery-overlay"></div></div> 
-                    </div>
-                </div>
-            </section>
-            <!-- gallery area end -->
 
 <!-- Popular Events area start -->
  
@@ -2616,8 +2617,44 @@ data-background="assets/img/event/7.jpg">
 
 </section>
 
+
+            <!-- gallery area start -->
+            <section id="gal" class="trending__area p-relative z-index-11 pt-130 pb-60" data-background="assets/img/event/10.jpg">
+                <div class="container">
+                    <div class="row align-items-end mb-25 bdFadeUp">
+                        <div class="col-lg-8">
+                            <div class="section__title-wrapper mb-40 bd-title-anim">
+                                <span class="section__subtitle">Some Moments</span>
+                                <h2 class="section__title">Our <span class="ms-text1">Gallery</span></h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="trending-btn mb-40 d-flex justify-content-lg-end">
+                                <a class="border__btn" href="#eventz">View All</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modern-gallery masonry-gallery">
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-01.jpg" alt="Gallery 1"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-02.jpg" alt="Gallery 2"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/work/a3.jpg" alt="Gallery 3"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-7.jpg" alt="Gallery 4"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-1.jpg" alt="Gallery 5"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-2.jpg" alt="Gallery 6"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-3.jpg" alt="Gallery 7"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-4.jpg" alt="Gallery 8"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-5.jpg" alt="Gallery 9"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-6.jpg" alt="Gallery 10"><div class="gallery-overlay"></div></div> 
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-9.jpg" alt="Gallery 11"><div class="gallery-overlay"></div></div>
+                        <div class="modern-gallery-item"><img src="assets/img/gallery-8.jpg" alt="Gallery 12"><div class="gallery-overlay"></div></div> 
+                    </div>
+                </div>
+            </section>
+            <!-- gallery area end -->
+
+
             <!-- Testimonial area starts here  -->
-            <section class="ms-tm2-area p-relative fix pt-15 pb-140 mt-100" data-background="assets/img2.png">
+            <section class="ms-tm2-area p-relative fix pt-15 pb-140 mt-100" data-background="">
                 <div class="ms-tm2-line p-absolute">
                     <img src="assets/img/testimonial/testimonial-line.png" alt="testimonial line">
                 </div>
@@ -2656,36 +2693,19 @@ data-background="assets/img/event/7.jpg">
                                 <div class="swiper-slide">
                                     <img src="assets/img/partner/partner-04.png" alt="partner image">
                                 </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/img/partner/partner-01.png" alt="partner image">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/img/partner/partner-02.png" alt="partner image">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/img/partner/partner-03.png" alt="partner image">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/img/partner/partner-04.png" alt="partner image">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/img/partner/partner-05.png" alt="partner image">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/img/partner/partner-04.png" alt="partner image">
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </section>      
+            
             <!-- Partner Area End Here  -->
 
 
             <!-- News area start here  -->
             
-            <section class="trending__area p-relative fix pt-130 include__bg pb-130" section id="clients" data-background="assets/img/event/bg1.jpg";>
+            <section class="trending__area p-relative fix pt-130 include__bg pb-130" section id="clients" data-background="assets/img/";>
                 <div class="container">
                     <div class="row justify-content-center bdFadeUp">
                         <div class="col-xl-6">
@@ -2699,7 +2719,8 @@ data-background="assets/img/event/7.jpg">
                         </div>
                     </div>
                 </div>
-             
+                             </section>
+
              
                 <div class="ms-news3-wrap bdFadeUp">
                     <div class="swiper-container ms-news3-active">
@@ -2921,6 +2942,7 @@ data-background="assets/img/event/7.jpg">
                     </div>
                 </div>
             </section>
+            
         </main>
             <!-- News area end here  -->
 
@@ -2963,86 +2985,116 @@ data-background="assets/img/event/7.jpg">
             </section> -->
             <!-- CTA Area End Here  -->
 
-    <!-- Testimonial area end here  -->
-    <section class="ms-tm2-area p-relative fix pt-130 pb-130">
-        <div class="ms-tm2-line p-absolute">
-            <img src="assets/img/testimonial/testimonial-line.png" alt="testimonial line">
-        </div>
-        <div class="container">
-            <div class="row justify-content-center bdFadeUp">
-                <div class="col-xl-6">
-                    <div class="section__title-wrapper text-center mb-65 bd-title-anim">
-                        <span class="section__subtitle">Awesome Feedbacks</span>
-                        <h2 class="section__title">Testimonials 
-                        </h2>
-                    </div>
-                </div>
+           <!-- Testimonial area end here  -->
+           <section class="ms-tm2-area p-relative fix pt-130 pb-130">
+            <div class="ms-tm2-line p-absolute">
+                <img src="assets/img/testimonial/testimonial-line.png" alt="testimonial line">
             </div>
-        </div>
-        <div class="container">
-            <div class="ms-tm2-imgs-wrap p-relative">
-           
-                </div>
+            <div class="container">
                 <div class="row justify-content-center bdFadeUp">
-                    <div class="col-xl-8">
-                        <div class="ms-tm2-wrap">
-                            <div class="ms-tm2-active mb-60">
-                                <div class="ms-tm2-item text-center">
-                                        <div class="ms-tm2-img-wrap p-relative d-inline-block mx-auto">
-                                          
-                                        <div class="ms-tm2-content pt-35">
-                                            <div class="ms-tm2-quotation mb-25">
-                                                <i class="flaticon-quotation"></i>
-                                            </div>
-                                            <p class="ms-tm2-text mb-30">" Regovents made our corporate conference seamless and impressive.
-                                                "</p>
-                                            <div class="ms-tm2-author">
-                                                <span class="ms-tm2-name">Mark T. </span>
-                                                <span class="ms-tm2-designation">CEO of TechFirm Inc.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms-tm2-item text-center">
-                                    <div class="ms-tm2-img-main">
-                                     
-                                        <div class="ms-tm2-content pt-35">
-                                            <div class="ms-tm2-quotation mb-25">
-                                                <i class="flaticon-quotation"></i>
-                                            </div>
-                                            <p class="ms-tm2-text mb-30">"The team's creativity and professionalism exceeded our expectations for our product launch."
-                                            </p>
-                                            <div class="ms-tm2-author">
-                                                <span class="ms-tm2-name">Lisa R.</span>
-                                                <span class="ms-tm2-designation"> Marketing Director</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms-tm2-item text-center">
-                                
-                                        <div class="ms-tm2-content pt-35">
-                                            <div class="ms-tm2-quotation mb-25">
-                                                <i class="flaticon-quotation"></i>
-                                            </div>
-                                            <p class="ms-tm2-text mb-30">"From planning to execution, Regovents handled everything perfectly for our anniversary party."
-                                            </p>
-                                            <div class="ms-tm2-author">
-                                                <span class="ms-tm2-name">David</span>
-                                                <span class="ms-tm2-designation">Customer</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                    <div class="col-xl-6">
+                        <div class="section__title-wrapper text-center mb-65 bd-title-anim">
+                            <span class="section__subtitle">Awesome Feedbacks</span>
+                            <h2 class="section__title">Our <span>Testimonials</span>
+                            </h2>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Testimonial area end here  -->
+            <div class="container">
+                <div class="ms-tm2-imgs-wrap p-relative">
+                  
+                    <div class="ms-tm2-img2 ms-tm2-shadow p-absolute w-img d-none d-lg-block">
+                        <img src="assets/img/testimonial/man3.jpg" alt="testimonial image">
+                    </div>
+                   
+                   
+                  
+                    <div class="ms-tm2-img6 ms-tm2-shadow p-absolute w-img d-none d-xl-block">
+                        <img src="assets/img/testimonial/man2.jpg" alt="testimonial image">
+                    </div>
+                    <div class="row justify-content-center bdFadeUp">
+                        <div class="col-xl-8">
+                            <div class="ms-tm2-wrap">
+                                <div class="ms-tm2-active mb-60">
+                                    <div class="ms-tm2-item text-center">
+                                        <div class="ms-tm2-img-main">
+                                            <div class="ms-tm2-img-wrap p-relative d-inline-block mx-auto">
+                                                <div class="ms-tm2-signature w-img">
+                                                </div>
+                                                <div class="ms-tm2-author-img m-img">
+                                                    <img src=" assets/img/testimonial/man1.jpg"
+                                                        alt="testimonial image">
+                                                </div>
+                                            </div>
+                                            <div class="ms-tm2-content pt-35">
+                                                <div class="ms-tm2-quotation mb-25">
+                                                    <i class="flaticon-quotation"></i>
+                                                </div>
+                                                <p class="ms-tm2-text mb-30">Regovents made our corporate conference seamless and impressive.</p>
+                                                <div class="ms-tm2-author">
+                                                    <span class="ms-tm2-name">Mark T. </span>
+                                                    <span class="ms-tm2-designation">CEO of TechFirm Inc.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ms-tm2-item text-center">
+                                        <div class="ms-tm2-img-main">
+                                            <div class="ms-tm2-img-wrap p-relative d-inline-block mx-auto">
+                                                <div class="ms-tm2-signature w-img">
+                                                    </div>
+                                                <div class="ms-tm2-author-img m-img">
+                                                    <img src=" assets/img/testimonial/woman2.jpg"
+                                                        alt="testimonial image">
+                                                </div>
+                                            </div>
+                                            <div class="ms-tm2-content pt-35">
+                                                <div class="ms-tm2-quotation mb-25">
+                                                    <i class="flaticon-quotation"></i>
+                                                </div>
+                                                <p class="ms-tm2-text mb-30">The team's creativity and professionalism exceeded our expectations for our product launch.</p>
+                                                <div class="ms-tm2-author">
+                                                    <span class="ms-tm2-name">Lisa R.</span>
+                                                    <span class="ms-tm2-designation"> Marketing Director</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ms-tm2-item text-center">
+                                        <div class="ms-tm2-img-main">
+                                            <div class="ms-tm2-img-wrap p-relative d-inline-block mx-auto">
+                                                <div class="ms-tm2-signature w-img">
+                                                 
+                                                </div>
+                                                <div class="ms-tm2-author-img m-img">
+                                                    <img src=" assets/img/testimonial/man2.jpg"
+                                                        alt="testimonial image">
+                                                </div>
+                                            </div>
+                                            <div class="ms-tm2-content pt-35">
+                                                <div class="ms-tm2-quotation mb-25">
+                                                    <i class="flaticon-quotation"></i>
+                                                </div>
+                                                <p class="ms-tm2-text mb-30">From planning to execution, Regovents handled everything perfectly for our anniversary party.</p>
+                                                <div class="ms-tm2-author">
+                                                    <span class="ms-tm2-name">David</span>
+                                                    <span class="ms-tm2-designation">Client</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="ms-tm2-dots ms-tm-dots-horizontal ms-round-dots d-flex justify-content-center mt-20">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial area end here  -->
 
 
         
@@ -3189,41 +3241,27 @@ data-background="assets/img/event/7.jpg">
     <div class="mi-invert-fix">
         <div class="container mil-p-120-60">
             <div class="row justify-content-between">
-                <div class="col-md-4 col-lg-4 mil-mb-60">
-                    <!-- <form class="mil-subscribe-form mil-up" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="657e9e5c-4ece-429d-b30b-837af53831a6" /> -->
-                        <!-- <input type="hidden" name="subject" value="New Submission from Web3Forms" />
-                        <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-                        <input type="email" name="email" placeholder="Enter your email" required />
-                        <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
-                    </form> -->
+                <div class="col-md-12"> <!-- Change to col-md-12 for full width -->
+                    <nav class="mil-footer-menu mil-mb-60">
+                        <ul>
+                            <li class="mil-up mil-active"><a href="index.html">Home</a></li>
+                            <li class="mil-up"><a href="#ms-popular__area">Services</a></li>
+                            <li class="mil-up"><a href="#gal">Gallery</a></li>
+                            <li class="mil-up"><a href="#eventz">Events</a></li>
+                            <li class="mil-up"><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="col-md-7 col-lg-6">
-                    <div class="row justify-content-end">
-                        <div class="col-md-6 col-lg-7">
-                            <nav class="mil-footer-menu mil-mb-60">
-                                <ul>
-                                    <li class="mil-up mil-active"><a href="index.html">Home</a></li>
-                                    <li class="mil-up"><a href="#ms-popular__area">Services</a></li>
-                                    <li class="mil-up"><a href="#gal">Gallery</a></li>
-                                    <li class="mil-up"><a href="#eventz">Events</a></li>
-                                    <li class="mil-up"><a href="#contact">Contact</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="col-md-6 col-lg-5">
-                            <ul class="mil-menu-list mil-up mil-mb-60">
-                                <li><a href="https://regortz.com/privacy.html" class="mil-light-soft">Privacy Policy</a></li>
-                                <li><a href="https://regortz.com/FAQs.html" class="mil-light-soft">FAQs</a></li>
-                                <li><a href="https://regortz.com/careers.html" class="mil-light-soft">Careers</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="col-md-12"> <!-- Change to col-md-12 for full width -->
+                    <ul class="mil-menu-list mil-up mil-mb-60">
+                        <li><a href="https://regortz.com/privacy.html" class="mil-light-soft">Privacy Policy</a></li>
+                        <li><a href="https://regortz.com/FAQs.html" class="mil-light-soft">FAQs</a></li>
+                        <li><a href="https://regortz.com/careers.html" class="mil-light-soft">Careers</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="row justify-content-between flex-sm-row-reverse">
-                <div class="col-md-7 col-lg-6"></div>
-                <div class="col-md-4 col-lg-6 mil-mb-60">
+                <div class="col-md-12"> <!-- Change to col-md-12 for full width -->
                     <div class="mil-vert-between">
                         <div class="mil-mb-30">
                             <ul class="mil-social-icons mil-up">
@@ -3243,14 +3281,13 @@ data-background="assets/img/event/7.jpg">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.youtube.com/" target="_blank"> <!-- Update the link if needed -->
-                                        <i class="fab fa-youtube"></i> <!-- Change to YouTube icon -->
+                                    <a href="https://www.youtube.com/" target="_blank">
+                                        <i class="fab fa-youtube"></i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <br>
-
                         <p class="mil-light-soft mil-up">© Copyright 2025 - Regortz. All Rights Reserved.</p>
                     </div>
                 </div>
@@ -3289,6 +3326,7 @@ data-background="assets/img/event/7.jpg">
     <script src="assets/app/js/jplayer.playlist.js"></script>
     <script src="assets/app/js/settings.js"></script>
     <script src="assets/app/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script>
     function showSlide(slideIndex) {
@@ -3346,6 +3384,24 @@ data-background="assets/img/event/7.jpg">
         }
     });
     </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const progressWrap = document.querySelector('.progress-wrap');
+        if (progressWrap) {
+            progressWrap.addEventListener('click', function(e) {
+                console.log('Button clicked!'); // Check if the click event is firing
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+</script>
+
 
 </body>
 

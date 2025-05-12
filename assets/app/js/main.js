@@ -92,8 +92,6 @@ if (progressWrap) {
     });
 }
 
-
-
 	/*======================================
 	Sidebar Toggle
 	========================================*/
@@ -104,11 +102,6 @@ if (progressWrap) {
 	$(".sidebar__toggle").on("click", function () {
 		$(".offcanvas__info").addClass("info-open");
 		$(".offcanvas__overlay").addClass("overlay-open");
-	});
-
-	document.querySelector('.sidebar__toggle').addEventListener('click', function() {
-		const menu = document.querySelector('.sidebar-menu');
-		menu.style.display = menu.style.display === 'block' ? 'none' : 'block'; // Toggle display
 	});
 
 	/*======================================
@@ -240,7 +233,7 @@ if (progressWrap) {
 	let rtl_setting = bd_rtl == 'rtl' ? true : false;
 
 	/*======================================
-	Song Active Js
+	Song Active 
 	========================================*/
 	var msSongActive = new Swiper(".ms-song-active", {
 		rtl: rtl_setting,
@@ -327,11 +320,14 @@ if (progressWrap) {
 	========================================*/
 	var msPopularActive = new Swiper(".ms-popular-active", {
 		rtl: rtl_setting,
-		loop: false,
+		loop: true,
 		spaceBetween: 25,
 		slidesPerShow: 4,
-		slidesToScroll: 1,
-		autoplay: true,
+		slidesToScroll: 4,
+		autoplay: {
+			delay: 0, // Adjust the delay as needed
+			disableOnInteraction: false, // Allow autoplay to continue after user interactions
+		},
 		speed: 6000,
 		observeParents: true,
 		observer: true,
@@ -353,13 +349,14 @@ if (progressWrap) {
 			},
 		},
 	});
+	
 
 	var msPopular2Active = new Swiper(".ms-popular2-active", {
 		rtl: rtl_setting,
 		loop: true,
 		spaceBetween: 25,
 		slidesPerShow: 6,
-		slidesToScroll: 1,
+		slidesToScroll: 4,
 		autoplay: true,
 		speed: 6000,
 		observeParents: true,
@@ -393,6 +390,16 @@ if (progressWrap) {
 	});
 
 
+// // Add hover functionality
+// var popularActiveContainer = document.querySelector(".ms-popular-active");
+
+// popularActiveContainer.addEventListener("mouseenter", function() {
+//     msPopularActive.autoplay.stop(); // Stop autoplay on hover
+// });
+
+// popularActiveContainer.addEventListener("mouseleave", function() {
+//     msPopularActive.autoplay.start(); // Start autoplay when not hovering
+// });
 
 	/*======================================
 	Text Scroll Active Js
