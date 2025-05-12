@@ -4053,6 +4053,7 @@ Animate Underline
   margin: auto;
   width: 100%;
   z-index: 99;
+  bottom: 0 !important;
 }
 
 .sticky {
@@ -4070,6 +4071,8 @@ Animate Underline
   -o-box-shadow: 0 0 60px 0 rgba(53, 57, 69, 0.15);
   box-shadow: 0 0 60px 0 rgba(53, 57, 69, 0.15);
   animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+  bottom: 0 !important;
+
 }
 
 .sticky2 {
@@ -4191,14 +4194,16 @@ Animate Underline
   color: var(--clr-common-white);
 }
 
-.header__right {
+/* .header__right {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   align-items: center;
   gap: 30px;
-}
+  bottom: 0 !important;
+
+} */
 
 .header__action-inner {
   gap: 30px;
@@ -4483,7 +4488,6 @@ Animate Underline
 }
 
 .ms-navigation-wrap {
-  display: grid;
   grid-template-columns: auto 73%;
   align-items: center;
 }

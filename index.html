@@ -382,9 +382,127 @@ h2, .h6 {
     color: #D9FF00 !important;
 }
 
+/* Add this to your CSS file */
+.header {
+    background-color: transparent; /* Initial state */
+    transition: background-color 0.3s; /* Smooth transition */
+    position: fixed; /* Keep the header fixed at the top */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    width: 100%; /* Full width */
+    position: fixed; /* Keep it fixed at the top */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+.header__right {
+    background-color: transparent; /* Initial background color */
+    transition: background-color 0.3s; /* Optional: smooth transition */
+    height: auto; /* Set a specific height for the scrolled header */
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    padding: 0; /* Add horizontal padding */
+    width: 100%;
+    border-radius: 50px;
+    justify-content: space-between; /* Adjusts spacing between elements */
 
+}
+.header.scrolled {
+    background-color: black;
+    width: 100%; /* Ensure it covers the full width */
+    height: 60px; /* Set a specific height */
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
 
+.header__main {
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    width: 100%; /* Ensure it takes the full width */
+    display: flex; /* Ensure it uses flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space items evenly */
+}
+.de-video-overlay {
+    position: absolute; /* Position it over the video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 0; /* Ensure it sits above the video but below the text */
+}
+.de-video-content {
+    position: relative; /* Ensure it is positioned relative to the overlay */
+    z-index: 1; /* Ensure it sits above the overlay */
+}
+.header-content {
+    display: flex;
+    justify-content: center; /* Center the toggle button */
+    align-items: center; /* Vertically center the button */
+}
 
+.mean__menu-wrapper {
+    flex-grow: 1; /* Allows the menu to take available space */
+}
+
+.ms-dot-toggle {
+    width: 50px; /* Set a fixed width for the toggle button */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+.ms-dot-toggle img {
+    max-width: 100%; /* Ensure the image scales properly */
+    height: auto; /* Maintain aspect ratio */
+}
+@media (min-width: 769px) { /* Adjust the min-width as needed */
+    .sidebar__toggle {
+        display: none; /* Hide the toggle button on larger screens */
+    }
+}
+
+.sidebar-menu1 {
+    position: absolute; /* Position it absolutely */
+    right: 10px; /* Align it to the right */
+    top: 60px; /* Adjust based on your layout */
+    background-color: white; /* Background color */
+    border: 1px solid #ccc; /* Border for visibility */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    z-index: 1000; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+}
+
+.mobile-menu2 ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.mobile-menu2 li {
+    padding: 10px; /* Spacing for each item */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.mobile-menu2 li a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+}
+
+.mobile-menu2 li:hover {
+    color: #D9FF00; /* Change text color on hover */
+    background-color: transparent; /* Ensure background remains transparent */
+}
+
+@media (max-width: 768px) { /* Show the toggle button on mobile */
+    .sidebar__toggle {
+        display: block; /* Show the toggle button */
+        position: right; /* Position it absolutely */
+        right: 0px; /* Adjust the right spacing as needed */
+        top: 10px; /* Adjust the top spacing as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+}
 
 </style>
 <body>
@@ -450,9 +568,21 @@ h2, .h6 {
                         </form>
                     </div>
                     <div class="hr-1 mt-30 mb-30 d-xl-block"></div>
-                    <div class="mobile-menu2 fix mb-30  d-xl-block"></div>
+                    <div class="mobile-menu2 fix mb-30  d-xl-block">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#aboutus">About Us</a></li>
+                            <li><a href="#ms-popular__area">Our Services</a></li>
+                            <li><a href="#ms-popular__area2">Why Us</a></li>
+                            <li><a href="#gal">Gallery</a></li>
+                            <li><a href="#eventz">Events</a></li>
+                            <li><a href="#clients">Our Clients</a></li>
+                            <li><a href="#contact">Join Us</a></li>
+                        </ul>
+                    </div>
                     <div class="hr-1 mt-30 mb-30 d-xl-block"></div>
                     <div class="offcanvas__btn mb-30">
+
                         <a class="ms-border-btn" href="services.html"><i class="fa-solid fa-plus"></i> List Your
                             Service</a>
                     </div>
@@ -461,6 +591,8 @@ h2, .h6 {
                             <a href="https://www.linkedin.com/" title="Instagram" target="_blank">IN</a>
                             <a href="https://twitter.com/" title="Twitter" target="_blank">TW</a>
                             <a href="https://www.facebook.com/" title="Facebook" target="_blank">FB</a>
+                            <a href="https://www.youtube.com/" title="YouTube" target="_blank">YT</a> <!-- Added YouTube link -->
+
                         </div>
                     </div>
                 </div>
@@ -521,8 +653,8 @@ h2, .h6 {
     <div id="header-sticky" class="header__area header-1 ms-header-fixed ms-bg-body">
         <div class="container-fluid ms-maw-1710">
             <div class="row align-items-center">
-                <div class="col-12">
-                    <div class="mega__menu-wrapper p-relative">
+                <div class="col custom-width-10"> <!-- Apply the custom class here -->
+                    <div class="header__right">
                         <div class="header__main d-flex align-items-center justify-content-between">
                             <div class="header__logo pt-25 pb-25">
                                 <a href="index.html">
@@ -564,22 +696,19 @@ h2, .h6 {
                                                 </li>
                                             </ul>
                                         </nav>
-                                       
-
-                              
-                                  
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                        <div class="header-content">
+                                            <div class="ms-dot-toggle ms-cp sidebar__toggle" style="width: 50px; text-align: center;">
+                                                <img src="assets/img/header/menu-dot.png" alt="menu dot" style="max-width: 100%; height: auto;">
+                                                <div class="sidebar-menu1" style="display: none;"> <!-- Initially hidden -->
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
         </div>
     </div>
 </header>
 <!-- Header area end -->
-
+    
 
 <!-- Header area end -->
    <!-- page title area start  -->
@@ -587,6 +716,10 @@ h2, .h6 {
    <div id="content" class="no-bottom no-top">
     <section id="section-hero" class="full-height no-padding text-light" data-speed="4" data-type="background">
         <div class="de-video-container">
+            <video preload="true" autoplay="autoplay" loop="true" muted="true">
+                <source src="assets/img/video-1.mp4" type="video/mp4" />
+            </video>
+            <div class="de-video-overlay"></div> <!-- Overlay -->
             <div class="de-video-content">
                 <div class="container">
                     <div class="row">
@@ -595,15 +728,14 @@ h2, .h6 {
                             <h2><span class="id-color">Premier Corporate Event Planning Experts</span></h2>
                             <div class="spacer-single"></div>
                             <br>
-            
                             <div class="d-lg-flex justify-content-center">
                                 <div class="h6 padding10 pt0 pb0" style="margin-right: 20px;">
-                                    <i class="i_h3 fa fa-user" style="color: #ffcc00;"></i> <!-- Change icon color -->
-                                    <span style="color: #ffffff;">38+ Services</span> <!-- Change text color -->
+                                    <i class="i_h3 fa fa-user" style="color: #ffcc00;"></i>
+                                    <span style="color: #ffffff;">38+ Services</span>
                                 </div>
                                 <div class="h6 padding10 pt0 pb0" style="margin-left: 20px;">
-                                    <i class="i_h3 fa fa-map-marker" style="color: #ffcc00;"></i> <!-- Change icon color -->
-                                    <span style="color: #ffffff;">Bangalore, Karnataka</span> <!-- Change text color -->
+                                    <i class="i_h3 fa fa-map-marker" style="color: #ffcc00;"></i>
+                                    <span style="color: #ffffff;">Bangalore, Karnataka</span>
                                 </div>
                             </div>
                             <br>
@@ -613,10 +745,6 @@ h2, .h6 {
                     </div>
                 </div>
             </div>
-            <div class="de-video-overlay t50"></div>
-            <video preload="true" autoplay="autoplay" loop="true" muted="true">
-                <source src="assets/img/video-1.mp4" type="video/mp4" />
-            </video>
         </div>
     
 
@@ -636,28 +764,11 @@ h2, .h6 {
             <!-- Banner 3 Area End Here  -->
 
             <!-- Navigation Area Start Here  -->
-            <div class="ms-navigation-area fix">
                 <div class=" ms-navigation-wrap ms-bg-3">
                     <div class="d-none d-xl-block">
-                        <div class="ms-nl-wrap ms-bg-5">
-                            <div class="ms-nl-item">
-                                <div class="ml-nl-logo ms-mw-142 m-img">
-                                    <a href="index.html"><img src="assets/img/logo/footer-logo.png" alt="logo"></a>
-                                </div>
-                            </div>
-                            <div class="ms-nl-item">
-                                <div class="ms-dot-toggle ms-cp sidebar__toggle">
-                                    <img src="assets/img/header/menu-dot.png" alt="menu dot">
-                                </div>
-                            </div>
-                            <div class="ms-nl-item">
-                                <div class="ms-nl-search">
-                                    <a class="ms-search-btn" href="#"><i class="flaticon-loupe"></i> Find
-                                        Acts</a>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
+                    
                     <div class="ms-navigation-slider">
                         <div class="ms-ns-active">
                             <div class="ms-ns-slick">
@@ -679,6 +790,8 @@ h2, .h6 {
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
             <!-- Navigation Area End Here  -->
 
             <!-- work area start -->
@@ -3130,8 +3243,8 @@ data-background="assets/img/event/7.jpg">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.linkedin.com/company/regortz/" target="_blank">
-                                        <i class="fab fa-linkedin-in"></i>
+                                    <a href="https://www.youtube.com/" target="_blank"> <!-- Update the link if needed -->
+                                        <i class="fab fa-youtube"></i> <!-- Change to YouTube icon -->
                                     </a>
                                 </li>
                             </ul>
@@ -3217,7 +3330,22 @@ data-background="assets/img/event/7.jpg">
     });
     </script>
 
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('.header__right'); // Updated class name
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 0) {
+                    header.style.backgroundColor = 'black'; // Change to black when scrolled down
+                } else {
+                    header.style.backgroundColor = 'transparent'; // Change back to transparent when at the top
+                }
+            });
+        } else {
+            console.error('Element with class "header__right" not found.');
+        }
+    });
+    </script>
 
 </body>
 

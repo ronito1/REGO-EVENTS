@@ -92,6 +92,8 @@ if (progressWrap) {
     });
 }
 
+
+
 	/*======================================
 	Sidebar Toggle
 	========================================*/
@@ -102,6 +104,11 @@ if (progressWrap) {
 	$(".sidebar__toggle").on("click", function () {
 		$(".offcanvas__info").addClass("info-open");
 		$(".offcanvas__overlay").addClass("overlay-open");
+	});
+
+	document.querySelector('.sidebar__toggle').addEventListener('click', function() {
+		const menu = document.querySelector('.sidebar-menu');
+		menu.style.display = menu.style.display === 'block' ? 'none' : 'block'; // Toggle display
 	});
 
 	/*======================================
